@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="CSS/main.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <header>HOWDY! Welcome to The Original Nashville!</header> <!--come up with intro name-->
         <article class="search bar">
-            <div>  
-                <input>   
-                <input> 
-            </div>   
+         <div> <!--RestaurantList-->
+                <select id = "restaurant">
+                    <option value="182">Breakfast</option>
+                    <option value="541">Diner</option>
+                    <option value="143">Healthy Food</option>
+                    <option value="998">Audi</option>
+                </select>
+            </div> 
+            <div id="concertInfo">  
+                    <input type="text">   
+                    <input> 
+                </div>  
+
         </article>  
         <article id="results">
             <!--srcoll box of results-->
@@ -24,8 +33,12 @@
 
             </div> 
 </body>
-<script src="scripts/main.js"></script>
-<script src="scripts/parksapi.js"></script>
+<script src="scripts/lister.js"></script>
+<script src="scripts/restaurantData.js"></script>
+<script src="scripts/concerts.js"></script>
+<script src="scripts/results.js"></script>
+<script src="Scripts/main.js"></script>
+
 <footer>
     <!--copyright-->
 </footer>
