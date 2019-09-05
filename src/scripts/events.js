@@ -58,10 +58,10 @@ API.askForApi().then(localList => {
 
     for (i = 0; i < localList.length; i++) {
         let resize = localList[i].slice(0,9);
-        return resize;
-
+        
+        console.log("resize it", resize)
     }
-    console.log("resize it", resize)
+    
 
 
 })
