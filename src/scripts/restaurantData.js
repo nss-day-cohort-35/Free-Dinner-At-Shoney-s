@@ -10,8 +10,8 @@ const restaurantAPI = {
         //with the same number.
         return `
         <div>
-        <span id = ""Restaurant-${indexNum}"> ${entry.restaurant.name} </span>
-        <input type = "button" id = "Save-${indexNum}" class = "saveButton" value="Save">
+        <span id = "restaurant-${indexNum}"> ${entry.restaurant.name} </span>
+        <input type = "button" id = "save-${indexNum}" class = "saveButton" value="Save">
         </div>
         `
     },
