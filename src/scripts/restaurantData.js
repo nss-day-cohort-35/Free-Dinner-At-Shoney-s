@@ -11,7 +11,7 @@ const restaurantAPI = {
         return `
         <div>
         <span id = ""Restaurant-${indexNum}"> ${entry.restaurant.name} </span>
-        <input type = "button" id = "Save-${indexNum}" value="Save">
+        <input type = "button" id = "Save-${indexNum}" class = "saveButton" value="Save">
         </div>
         `
     },
@@ -25,6 +25,17 @@ const restaurantAPI = {
 
         for(let i = 0; i < Object.keys(parsedData.restaurants).length; i++){ // For each search result...
             resultsDOM.innerHTML += this.fillEntry(parsedData.restaurants[i], i); //Create new DOM elements
+        }
+
+        this.applyEvents()
+
+    },
+
+    applyEvents: function() {
+        const saveButtonList = document.querySelectorAll("#results .saveButton")
+        for(let i = 0; i < saveButtonList.length; i++){
+            console.log("assigning" + i);
+            saveButtonList[i].addEventListener("click",restaurantSaveEvent)
         }
     }
 
