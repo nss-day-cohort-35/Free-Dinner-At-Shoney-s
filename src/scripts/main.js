@@ -7,6 +7,10 @@ const restaurantSearchEvent = (event) => { //Button Click Event
         .then(data => restaurantData.fillArticle(data))
 }
 
+const setSaveEventListeners = () =>{
+    
+}
+
 const restaurantSearchButton = document.querySelector("#submitRestaurants"); //Calls the button that submits
 restaurantSearchButton.addEventListener("click", restaurantSearchEvent); //Adds ana event listener
 
