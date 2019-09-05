@@ -1,28 +1,24 @@
-fetch("https://app.ticketmaster.com/discovery/v1/events.json?apikey=XM43D9BduVA5MvbUW1duD6DHBAOv563h")
-    .then(concerts => concerts.json())
-    .then(parsedConcerts => {
-      
-            for (let i = 0; i < 9; i++){
-                let tickets = parsedConcerts._embedded.events[i].name;
-                 //concertInfo.innerHTML += createConcertList(name[i]); 
-                console.log(parsedConcerts._embedded.events[i].name) 
-                
+
+
+    fetch(`https://app.ticketmaster.com/discovery/v2/events/?keyword=&city=nashville&apikey=XM43D9BduVA5MvbUW1duD6DHBAOv563h`)
+        .then(concerts => concerts.json())
+        .then(parsedConcerts => {
+            
+            for (let i = 0; i < 19; i++){
+              document.querySelector(".dom").innerHTML += createConcertList(parsedConcerts._embedded.events[i]);
+               console.log(parsedConcerts._embedded.events[i].name) 
+            //console.table(parsedConcerts);
             }
-        })
 
-   const concertInfo = document.querySelector("#concertInfo");
+        })  
 
-
-   const createConcertList = (concert) => {
-        return `
+const createConcertList = (item) => {
+    return `
         <div>
-            <h2>${concert.name}</h2>
-            <p>${concert.localDate}</p>
-            <p>${concert.localTime}</p>
-            <p>${concert.venue}</p>
+            <h2>${item.name}</h2>
         </div>
         `
-    }
-    console.log("HEY");
+}
 
- 
+
+
