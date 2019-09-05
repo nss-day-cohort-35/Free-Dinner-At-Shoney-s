@@ -11,12 +11,12 @@ const API = {
         })
             .then(Response => Response.json())
             .then(parsedDate => {
-                console.table("this is a list", parsedDate.events)
+
 
                 let localList = [];
                 for (i = 0; i < parsedDate.events.length; i++) {
                     localList.push(parsedDate.events[i].start.local)
-                    console.log("local list", localList[i])
+
                 }
 
                 return localList
@@ -29,16 +29,9 @@ const API = {
 
 
 
-function addResults(array) {
-    let tableValue = document.querySelector("#search_events").value
-    for (let i = 0; Object.keys(array).length; i++) {
-        if (tableValue === array.start.local) {
-
-        }
-
-    }
+function noEvents(item) {
+return `<h3> There are no events for this day, please try another one </h3>`
 }
-
 
 
 function eventsHTML(item) {
@@ -50,18 +43,25 @@ function eventsHTML(item) {
 
 const saveEvents = document.getElementById("result")
 
-document.querySelector("#result")
+
 
 API.askForApi().then(localList => {
 
-    console.log(localList)
-
     for (i = 0; i < localList.length; i++) {
-        let resize = localList[i].slice(0,9);
-        
-        console.log("resize it", resize)
+        let resizeIt = localList[i].slice(0, 10);
+
+        console.log("resize it", resizeIt)
     }
-    
+    document.querySelector("#save_search").addEventListener("click", function addResults(data) {
+        let tableValue = document.querySelector("#search_events").value
+        for (let i = 0; data.length; i++) {
+            if (tableValue === data[i]) {
+              saveEvents.innerHTML += eventsHTML
+            } else {
+                saveEvents.innerHTML += noEvents
+            }
 
-
+        }
+    })
 })
+
