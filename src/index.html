@@ -11,7 +11,7 @@
 
 <body>
     <header>HOWDY! Welcome to The Original Nashville!</header>
-    <!--come up with intro name-->
+    <!-- intro name-->
     <article class="search bar">
         <div>
             <!--RestaurantList-->
@@ -22,10 +22,12 @@
                 <option value="998">Audi</option>
             </select>
         </div>
-        <div id="concertInfo">
-            <input type="text">
-            <input>
-        </div>
+        <fieldset>
+            <input type="text" placeholder="Concerts">
+        </fieldset> 
+          <div class="dom">
+              
+          </div>
         <fieldset>
             <lable for="search_events"></lable>
             <input type="date" id="search_events" placeholder="When are you in Nashville?">
@@ -34,6 +36,7 @@
 
     </article>
     <article id="results">
+        <h2>Your Search Results</h2>
         <!--srcoll box of results-->
         <!--Place BUTTON here-->
     </article>
@@ -50,9 +53,10 @@
 <script src="scripts/lister.js"></script>
 <script src="scripts/restaurantData.js"></script>
 <script src="scripts/parks.js"></script>
+<script src="scripts/APIData.js"></script>
 <script src="scripts/concerts.js"></script>
 <script src="scripts/results.js"></script>
 <script src="Scripts/main.js"></script>
-<script src="scripts/APIData.js"></script>
+
 
 </html>
