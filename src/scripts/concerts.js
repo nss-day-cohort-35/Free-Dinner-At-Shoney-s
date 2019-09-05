@@ -4,16 +4,13 @@
         .then(concerts => concerts.json())
         .then(parsedConcerts => {
             
-            for (let i = 0; i < 9; i++){
+            for (let i = 0; i < 19; i++){
               document.querySelector(".dom").innerHTML += createConcertList(parsedConcerts._embedded.events[i]);
-              console.log(parsedConcerts._embedded.events[i].name) 
+               console.log(parsedConcerts._embedded.events[i].name) 
+            //console.table(parsedConcerts);
             }
 
-        })    
-
-
-const concertInfo = document.querySelector("#concertInfo");
-
+        })  
 
 const createConcertList = (item) => {
     return `
