@@ -1,0 +1,13 @@
+.dom{
+    border: 2px double black;
+    max-width: 600px;
+    overflow: scroll;
+    height: 200px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+body{
+    background-image: linear-gradient( rgb(253,220,253), rgb(204,152,200));
+}
+
