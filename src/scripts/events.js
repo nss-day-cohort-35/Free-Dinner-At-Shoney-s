@@ -12,14 +12,30 @@ const API = {
             .then(Response => Response.json())
             .then(parsedDate => {
 
+                let localListName = [];
 
-                let localList = [];
                 for (i = 0; i < parsedDate.events.length; i++) {
-                    localList.push(parsedDate.events[i].start.local)
-
+                    localListName.push(parsedDate.events[i].name.text)
+                    console.log("list of name", localListName)
                 }
 
-                return localList
+                let localListDate = [];
+                for (i = 0; i < parsedDate.events.length; i++) {
+                    localListDate.push(parsedDate.events[i].start.local)
+
+                }
+                console.log("local list", localListDate)
+                let resizeIt = []
+                for (let i = 0; i < localListDate.length; i++) {
+
+                    let y = localListDate[i].slice(0, 10)
+                    resizeIt.push(y)
+                    console.log(resizeIt)
+                }
+
+                return resizeIt
+
+
             })
     }
 }
@@ -28,43 +44,38 @@ const API = {
 
 
 
-
-function noEvents() {
-return `<h3> There are no events for this day, please try another one </h3>`
-}
-
-
-function eventsHTML(item) {
-    return ` <li>
-<h3><span>${item.events.name}</span><button class="save-button">Save</button></h3>
-<p>Start: ${item.events.start.local}</p>
-</li>`
-}
-
-const saveEvents = document.getElementById("result")
-
-
-
 API.askForApi().then(localList => {
-   
-    for (i = 0; i < localList.length; i++) {
-        let resizeIt = localList[i].slice(0, 10);
-
-        console.log("resize it", resizeIt)
-    
+    function noEvents() {
+        return `<h3> There are no events for this day, please try another one </h3>`
+    }
 
 
-    document.querySelector("#save_search").addEventListener("click", function addResults(data) {
+    function eventsHTML(item) {
+        return ` <li>
+    <h3><span>${item.events.name.text}</span><button class="save-button">Save</button></h3>
+    <p>Start: ${item.events.start.local}</p>
+    </li>`
+    }
+
+    const saveEvents = document.getElementById("result")
+
+
+
+
+
+
+    const buttonPress = document.querySelector("#save_search").addEventListener("click", function addResults() {
+        console.log("pressing the button", buttonPress())
         let tableValue = document.querySelector("#search_events").value
-        for (let i = 0; resizeIt.length; i++) {
-            if (tableValue === data[i]) {
-              saveEvents.innerHTML += eventsHTML
-            } else {
-                saveEvents.innerHTML += noEvents
-            }
 
+        if (tableValue === resizeIt) {
+            saveEvents.innerHTML += eventsHTML(localList)
+        } else if (tableValue === "") {
+            saveEvents.innerText += noEvents(localList)
         }
+
+
     })
-  }
+
 })
 
