@@ -6,7 +6,8 @@ fetch(`https://app.ticketmaster.com/discovery/v2/events/?city=Nashville,TN&keywo
     .then(parsedConcerts => {
 
         for (let i = 0; i < 19; i++) {
-            document.querySelector(".dom").innerHTML += createConcertList(parsedConcerts._embedded.events[i]);
+            if (parsedConcerts._embedded.events[i].name != undefined) {
+            document.querySelector(".dom").innerHTML += createConcertList(parsedConcerts._embedded.events[i]);}
             console.log(parsedConcerts._embedded.events[i])
             //console.table(parsedConcerts);
         }
@@ -15,14 +16,14 @@ fetch(`https://app.ticketmaster.com/discovery/v2/events/?city=Nashville,TN&keywo
 }
   
 const createConcertList = (item) => {
-    if (item != undefined) {
+    
     return `
         <div>
             <h2>${item.name}</h2>
             <a href="${item.url}">Get Tickets!</a>
         </div>
         `
-    }
+
 }
 
 
