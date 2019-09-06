@@ -21,12 +21,3 @@ restaurantSearchButton.addEventListener("click", restaurantSearchEvent); //Adds 
 //-------------------------------------------------
 
 
-const eventSearch = (event) => {
-    let searchID = document.querySelector("#search_events").value;
-    let eventData = Object.create(EventsAPI);
-    eventData.askForApi(searchID)
-    .then(data => eventData.fillDom(data))
-}
-
-const eventsSearchButton = document.querySelector("#save_search");
-eventsSearchButton.addEventListener("click", eventSearch);

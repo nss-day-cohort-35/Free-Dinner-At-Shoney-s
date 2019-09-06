@@ -1,5 +1,8 @@
 console.log("this is working")
 
+var resizeIt = [];
+var localListName = [];
+
 
 
 const API = {
@@ -12,7 +15,7 @@ const API = {
             .then(Response => Response.json())
             .then(parsedDate => {
 
-                let localListName = [];
+
 
                 for (i = 0; i < parsedDate.events.length; i++) {
                     localListName.push(parsedDate.events[i].name.text)
@@ -25,7 +28,7 @@ const API = {
 
                 }
                 console.log("local list", localListDate)
-                let resizeIt = []
+
                 for (let i = 0; i < localListDate.length; i++) {
 
                     let y = localListDate[i].slice(0, 10)
@@ -33,14 +36,14 @@ const API = {
                     console.log(resizeIt)
                 }
 
-                return resizeIt
+
 
 
             })
     }
 }
 
-
+console.log(localListName[0])
 
 
 
@@ -65,13 +68,14 @@ API.askForApi().then(localList => {
 
 
     const buttonPress = document.querySelector("#save_search").addEventListener("click", function addResults() {
-        console.log("pressing the button", buttonPress())
-        let tableValue = document.querySelector("#search_events").value
 
-        if (tableValue === resizeIt) {
-            saveEvents.innerHTML += eventsHTML(localList)
-        } else if (tableValue === "") {
-            saveEvents.innerText += noEvents(localList)
+        let tableValue = document.querySelector("#search_events").value
+        for (i = 0; i < resizeIt.length; i++) {
+            if (tableValue === resizeIt[i] && tableValue != undefined) {
+                saveEvents.innerHTML += eventsHTML(localListName[i])
+            } else if (tableValue === "") {
+                saveEvents.innerText += noEvents(API.askForApi)
+            }
         }
 
 
