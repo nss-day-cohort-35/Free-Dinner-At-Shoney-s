@@ -29,7 +29,7 @@ const API = {
 
 
 
-function noEvents(item) {
+function noEvents() {
 return `<h3> There are no events for this day, please try another one </h3>`
 }
 
@@ -46,15 +46,17 @@ const saveEvents = document.getElementById("result")
 
 
 API.askForApi().then(localList => {
-
+   
     for (i = 0; i < localList.length; i++) {
         let resizeIt = localList[i].slice(0, 10);
 
         console.log("resize it", resizeIt)
-    }
+    
+
+
     document.querySelector("#save_search").addEventListener("click", function addResults(data) {
         let tableValue = document.querySelector("#search_events").value
-        for (let i = 0; data.length; i++) {
+        for (let i = 0; resizeIt.length; i++) {
             if (tableValue === data[i]) {
               saveEvents.innerHTML += eventsHTML
             } else {
@@ -63,5 +65,6 @@ API.askForApi().then(localList => {
 
         }
     })
+  }
 })
 
