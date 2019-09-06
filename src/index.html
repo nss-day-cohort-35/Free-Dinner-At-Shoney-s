@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/main.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Nashville for Seniors</title>
 </head>
 
 <body>
-    <header>HOWDY! Welcome to The Original Nashville!</header>
+    <header>
+        <img src="images/partyseniors.jpg">
+        <h1>HOWDY! Welcome to The Original Nashville!</h1>
+    </header>
     <!-- intro name-->
     <article class="search bar">
         <div>
@@ -25,11 +28,12 @@
             </select>
             <button type="submit" id="submitRestaurants">Search!</button>
         </div>
-        <fieldset>  <!--concert-->
+        <fieldset>
+            <!--concert-->
             <input type="text" placeholder="Concerts">
             <button id="search">Search!</button>
         </fieldset>
-        
+
         <fieldset>
             <lable for="search_events"></lable>
             <input type="date" id="search_events" placeholder="When are you in Nashville?">
@@ -38,15 +42,15 @@
 
     </article>
 
-    <article id="results">
-        <h2>Your Search Results</h2>
-        <div class="dom"></div> 
-        <!--srcoll box of results-->
-        <!--Place BUTTON here-->
-    </article>
+    <h2>Your Search Results</h2>
+    <div class="dom">
+    <!--srcoll box of results-->
+    <!--Place BUTTON here-->
+    </div>
+    <h2>Itinerary of Favorites</h2>
     <div id="itinerary-list">
         <!--List of itineraries-->
-        <p id = "restaurant-Fav">Restaurant:</p>
+        <p id="restaurant-Fav">Restaurant:</p>
     </div>
 </body>
 

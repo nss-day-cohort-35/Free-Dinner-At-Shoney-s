@@ -17,7 +17,7 @@ const restaurantAPI = {
     },
 
     fillArticle: function(parsedData) { //Function that populates results based on Restaurant data
-        const resultsDOM = document.querySelector("#results"); //Calls results article
+        const resultsDOM = document.querySelector(".dom"); //Calls results article
         
         while (resultsDOM.firstChild) { // Clears Results article for new results
             resultsDOM.removeChild(resultsDOM.firstChild);
@@ -32,7 +32,7 @@ const restaurantAPI = {
     },
 
     applyEvents: function() {
-        const saveButtonList = document.querySelectorAll("#results .saveButton")
+        const saveButtonList = document.querySelectorAll(".dom .saveButton")
         for(let i = 0; i < saveButtonList.length; i++){
             console.log("assigning" + i);
             saveButtonList[i].addEventListener("click",restaurantSaveEvent)

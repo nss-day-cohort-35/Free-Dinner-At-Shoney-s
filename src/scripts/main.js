@@ -1,6 +1,4 @@
 //Restaurant Button Functions
-
-
 const restaurantSaveEvent = (event) => {
     const restaurantEntryNum = event.target.id.split("-"); //Splits the id of the button
     console.log(restaurantEntryNum[1]); //Gets the button number
