@@ -1,4 +1,4 @@
-#results{
+.dom{
     border: 2px double black;
     max-width: 600px;
     overflow: scroll;
