@@ -16,3 +16,9 @@ Ticketmaster API
  * Then a list of results will pop up inside the box below
  * Inside it you can read informations about the events and an handy link will open another page about the event's website 
  * Then you can save the event you like and create an itinerary within restaurants, parks and concerts in the __Music City USA__
+
+ 4. Restaurant: __How to use this dropdown__
+ * Click on the dropdown menu and select the type of cuisine you
+ would like.
+ *After making a selection, click on the submit button on the right side to search for a list of restaurants that have the cuisine type.
+ * Below in the search scrollbox, you may look at the restaurant's website and save it to the itinerary.
