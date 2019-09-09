@@ -17,3 +17,5 @@ const restaurantSearchButton = document.querySelector("#submitRestaurants"); //C
 restaurantSearchButton.addEventListener("click", restaurantSearchEvent); //Adds an event listener
 
 //-------------------------------------------------
+
+

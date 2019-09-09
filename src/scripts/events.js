@@ -1,67 +1,30 @@
-console.log("this is working")
 
 
-
-const API = {
-    askForApi() {
-        return fetch("https://www.eventbriteapi.com/v3/events/search/?q=senior&location.address=nashville&token=FZEHRXINGLKISD4D62G7", {
-            "headers": {
-                "Accept": "application/json"
-            }
-        })
-            .then(Response => Response.json())
-            .then(parsedDate => {
-                console.table("this is a list", parsedDate.events)
-
-                let localList = [];
-                for (i = 0; i < parsedDate.events.length; i++) {
-                    localList.push(parsedDate.events[i].start.local)
-                    console.log("local list", localList[i])
-                }
-
-                return localList
-            })
-    }
+function domHtml(data) {
+    return `<h3>${data.name.text}<h3>
+    <input type = "button" id = "save-${data.name.text}" class = "saveButton" value="Save">`
 }
 
 
+//function results(array) {
+  //  array.forEach(data => {
+    //    document.querySelector(".dom").innerHTML += domHtml(data);
+   // });
+// }
 
+function meetups(value) {
+    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${value}&location.address=nashville&token=FZEHRXINGLKISD4D62G7`)
+        .then(result => result.json())
+        .then(parsedResult => {
+            parsedResult.events.forEach(element => {
+                document.querySelector(".dom").innerHTML += domHtml(element);
+            });
 
-
-
-function addResults(array) {
-    let tableValue = document.querySelector("#search_events").value
-    for (let i = 0; Object.keys(array).length; i++) {
-        if (tableValue === array.start.local) {
-
-        }
-
-    }
+        });
 }
 
+document.querySelector("#search-meetUps").addEventListener("click", event => {
+    let searchTerm = document.querySelector("#fm-search-bar").value
+    meetups(searchTerm)
+});
 
-
-function eventsHTML(item) {
-    return ` <li>
-<h3><span>${item.events.name}</span><button class="save-button">Save</button></h3>
-<p>Start: ${item.events.start.local}</p>
-</li>`
-}
-
-const saveEvents = document.getElementById("result")
-
-document.querySelector("#result")
-
-API.askForApi().then(localList => {
-
-    console.log(localList)
-
-    for (i = 0; i < localList.length; i++) {
-        let resize = localList[i].slice(0,9);
-        
-        console.log("resize it", resize)
-    }
-    
-
-
-})
