@@ -21,16 +21,3 @@ restaurantSearchButton.addEventListener("click", restaurantSearchEvent); //Adds 
 
 //Stretch-Goals
 
-const savingItineraryButton = () => {
-    fetch("http://localhost:8088/itinerary")
-    .then(data => data.json)
-    .then(parsedData => {
-        var parsedTxt = JSON.parse(parsedData);
-        parsedTxt.push({        //add the employee
-            :"Mike",
-
-        });
-    })
-}
-
-savingItineraryButton();
