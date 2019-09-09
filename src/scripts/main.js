@@ -24,16 +24,34 @@ restaurantSearchButton.addEventListener("click", restaurantSearchEvent); //Adds 
 
 const addToItinerary = () => {
 
-    var database = JSON.stringify(makeObject());
-    
+    fetch("http://localhost:8088/itinerary", { // Replace "url" with your API's URL
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(makeObject())
+    })
+    fetch("http://localhost:8088/itinerary")
+        .then(data => populateList(data))
 }
+
+const populateList = (data) => {
+    document.querySelector("#ititerary-scroll").innerText += JSON.stringify(data);
+
+}
+
+
 
 const makeObject = () => { //Creates the object to move into JSON
 
     var jsonObject = {
+
         restaurant: document.querySelector("#restaurant-Fav").innerText,
+
         park: document.querySelector("#park-Fav").innerText,
+
         meetups: document.querySelector("#meetups-Fav").innerText,
+
         concerts: document.querySelector("#concertFav").innerText
     }
 
@@ -41,6 +59,6 @@ const makeObject = () => { //Creates the object to move into JSON
 }
 
 const itinerarySubmitButton = document.querySelector("#save-itinerary"); //Calls the button that saves itinerary
-itinerarySubmitButton.addEventListener("click", makeObject); //Adds an event listener
+itinerarySubmitButton.addEventListener("click", addToItinerary); //Adds an event listener
 
 

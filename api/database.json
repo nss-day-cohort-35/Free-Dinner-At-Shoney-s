@@ -1,6 +1,8 @@
 {
-    "itinerary":
-        {
-          
-        }
+  "itinerary": {
+    "restaurant": "Restaurant: Fido",
+    "park": "Park:",
+    "meetups": "Meetups:",
+    "concerts": "Concerts:"
   }
+}
