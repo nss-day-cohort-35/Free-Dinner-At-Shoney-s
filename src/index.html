@@ -17,8 +17,9 @@
     </header>
     <!-- intro name-->
     <article class="search bar">
-        <div>
+        <fieldset>
             <!--RestaurantList-->
+            <span>Search Restaurants by Cuisine:</span>
             <select id="restaurant">
                 <option value="182">Breakfast</option>
                 <option value="541">Diner</option>
@@ -28,21 +29,21 @@
                 <option value="30">Cafe</option>
             </select>
             <button type="submit" id="submitRestaurants">Search!</button>
-        </div>
+        </fieldset>
         <fieldset>
             <!--concert-->
+            <span>Search Concerts by Name:</span>
             <input type="text" placeholder="Concerts" id="concerts">
             <button id="search">Search!</button>
         </fieldset>
             <!--Meetups-->
         <fieldset>
-            <div id= "meetUps">
+            <div>
+                <span>Search Events:</span>
                 <input type="text" placeholder="Things to do in Nashville" id="fm-search-bar">
                 <button type="button" id="search-meetUps">Search!</button>
             </div>
         </fieldset>
-
-
     </article>
 
     <h2>Your Search Results</h2>

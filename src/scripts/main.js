@@ -1,7 +1,7 @@
 //Restaurant Button Functions
 const restaurantSaveEvent = (event) => {
-    const restaurantEntryNum = event.target.id.split("-"); //Splits the id of the button
-    console.log(restaurantEntryNum[1]); //Gets the button number
+    const restaurantEntryNum = event.target.id.split("-"); //Splits the id of the button into an array from the "-". I.E. [0]-[1]
+    //console.log(restaurantEntryNum[1]); Gets the button number
     const restaurantFavorite = document.querySelector(`#restaurant-${restaurantEntryNum[1]}`).innerText //Grabs the inner text of the element queried matching the button number
     document.querySelector("#restaurant-Fav").innerText = `Restaurant: ${restaurantFavorite}` // Displays text
 }
