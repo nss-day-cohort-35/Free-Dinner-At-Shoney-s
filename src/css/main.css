@@ -27,6 +27,23 @@ h2{
     font-family: 'Hepta Slab', serif;
 }
 
+.search-bar {
+    font-size: 20px;
+    border: 2px;
+}
+
+#restaurant,
+#concerts,
+#fm-search-bar {
+    font-size: 15px;
+}
+
+#submitRestaurants,
+#search,
+#search-meetUps {
+    font-size: 15px;
+}
+
 #itinerary-list{
     background-color: white;
     font-size: 20px;

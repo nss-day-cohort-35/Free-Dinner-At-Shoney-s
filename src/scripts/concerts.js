@@ -39,7 +39,7 @@ const concertAPI = function () {
 const search = document.getElementById("search");
 
 search.addEventListener("click", event => {
-    concertAPI()
+    concertAPI() 
 })
 
 const concertSaveEvent = (event) => {
