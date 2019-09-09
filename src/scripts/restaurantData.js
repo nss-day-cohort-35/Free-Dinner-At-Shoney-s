@@ -9,14 +9,16 @@ const restaurantAPI = {
     fillEntry : function(entry, indexNum) { //Makes a span and names it with the id of the index along with a buttton
         //with the same number.
         return `
-        <div>
-        <span id = "restaurant-${indexNum}"> ${entry.restaurant.name} </span>
+        <div class = "restaurantListBox">
+        <div id = "restaurant-${indexNum}" class = "restaurantListing"> ${entry.restaurant.name} </div>
+        <a href="${entry.restaurant.url}">Website</a>
         <input type = "button" id = "save-${indexNum}" class = "saveButton" value="Save">
         </div>
         `
     },
 
     fillArticle: function(parsedData) { //Function that populates results based on Restaurant data
+        console.table(parsedData);
         const resultsDOM = document.querySelector(".dom"); //Calls results article
         
         while (resultsDOM.firstChild) { // Clears Results article for new results
@@ -31,11 +33,13 @@ const restaurantAPI = {
 
     },
 
-    applyEvents: function() {
-        const saveButtonList = document.querySelectorAll(".dom .saveButton")
-        for(let i = 0; i < saveButtonList.length; i++){
-            console.log("assigning" + i);
-            saveButtonList[i].addEventListener("click",restaurantSaveEvent)
+    applyEvents: function() { //Function gets all of the save buttons and assigns them/
+        const saveButtonList = document.querySelectorAll(".dom .saveButton") //makes an array 
+        //of every save button in the .dom element.
+
+        for(let i = 0; i < saveButtonList.length; i++){ //For every button on the list
+            saveButtonList[i].addEventListener("click",restaurantSaveEvent) //add the event listener
+            //from main.js
         }
     }
 
