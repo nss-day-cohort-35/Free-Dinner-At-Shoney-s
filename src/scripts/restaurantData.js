@@ -18,7 +18,6 @@ const restaurantAPI = {
     },
 
     fillArticle: function(parsedData) { //Function that populates results based on Restaurant data
-        console.table(parsedData);
         const resultsDOM = document.querySelector(".dom"); //Calls results article
         
         while (resultsDOM.firstChild) { // Clears Results article for new results
