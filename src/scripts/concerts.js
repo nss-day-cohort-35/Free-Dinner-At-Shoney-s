@@ -39,3 +39,18 @@ search.addEventListener("click", event => {
     concertAPI()
 })
 
+const concertSaveEvent = (event) => {
+    console.log("Hi");
+    const concertIndexNum = event.target.id.split("-");
+    const concertFav = document.querySelector(`#concertFav-${concertIndexNum[1]}`).innerText
+    document.querySelector("#concertFav").innerText = `Concert: ${concertFav}`
+    
+    this.concertEvent();
+}
+
+const concertEvent = () => {
+    const saveButton = document.querySelectorAll(".dom .saveButton")
+    for(let i = 0; saveButton.length; i ++){
+        saveButton[i].addEventListener("click" , concertSaveEvent)
+    }
+}
