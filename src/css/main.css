@@ -1,10 +1,11 @@
 .dom{
     border: 2px double black;
-    max-width: 600px;
+    max-width: 900px;
     overflow: scroll;
     height: 200px;
     margin-top: 20px;
     background-color: white;
+    padding-left: 10px;
 }
 
 body{
@@ -30,6 +31,7 @@ h2{
 .search-bar {
     font-size: 20px;
     border: 2px;
+    max-width: 900px;
 }
 
 #restaurant,
@@ -40,7 +42,8 @@ h2{
 
 #submitRestaurants,
 #search,
-#search-meetUps {
+#search-meetUps,
+#save-itinerary {
     font-size: 15px;
 }
 
@@ -48,6 +51,7 @@ h2{
     background-color: white;
     font-size: 20px;
     border: 2px black solid;
+    max-width: 900px;
 }
 
 #itinerary-list p{
@@ -64,4 +68,18 @@ h2{
     padding-bottom: 5px;
     padding-left: 5px;
     border: 1px gray solid;
+}
+
+footer {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a:link,
+a:visited {
+    color: #7988B1;;
 }
