@@ -52,6 +52,7 @@ h2{
     font-size: 20px;
     border: 2px black solid;
     max-width: 900px;
+    margin-bottom: 10px;
 }
 
 #itinerary-list p{
