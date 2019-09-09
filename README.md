@@ -8,8 +8,8 @@ Zomato API
 Eventbrite API
 Ticketmaster API
 
-2. Parks: How to use this section of the website:
- choose from one of the following features for parks in the Nashville area: Walk/Jog Paths, Restroom available, Nature Centers, Community Centers, Dog Parks, Historic Features, Playgrounds.
+2. Parks:__How to use this section of the website:__
+ * Choose from one of the following features for parks in the Nashville area: Walk/Jog Paths, Restroom available, Nature Centers, Community Centers, Dog Parks, Historic Features, Playgrounds.
 
  3. MeetUp: __How to use this section of the website:__
  * You can chose for any topic you want and type it in the research box. Examples of topics are: "sport, senior, church, concerts, etc.."
