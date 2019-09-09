@@ -22,18 +22,22 @@ restaurantSearchButton.addEventListener("click", restaurantSearchEvent); //Adds 
 
 //Stretch-Goals
 
+const addToItinerary = () => {
+
+    var database = JSON.stringify(makeObject());
+    
+}
+
 const makeObject = () => { //Creates the object to move into JSON
 
     var jsonObject = {
-
-        id: 
         restaurant: document.querySelector("#restaurant-Fav").innerText,
         park: document.querySelector("#park-Fav").innerText,
         meetups: document.querySelector("#meetups-Fav").innerText,
         concerts: document.querySelector("#concertFav").innerText
     }
 
-    console.log(jsonObject.restaurant);
+    return jsonObject;
 }
 
 const itinerarySubmitButton = document.querySelector("#save-itinerary"); //Calls the button that saves itinerary
