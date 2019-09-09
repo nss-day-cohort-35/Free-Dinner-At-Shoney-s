@@ -3,13 +3,8 @@
 function domHtml(data) {  // this function will create the html section to add in the DOM
     return `<h4 id="${data.id}">${data.name.text} </h4>  
     <p>${data.description.text}</p>
-    <a href="${data.url}">See Info</a>
+    <a href="${data.url}" target="_blank">See Info</a>
     <input type = "button" class="saveButton" id="meetups-${data.id}" value="Save">`
-}
-
-
-function saveHtml(data) {  // this function will create the html section to add in the DOM when you save your results
-    return `<h4>${data.name.text}</h4>`
 }
 
 
@@ -34,9 +29,9 @@ document.querySelector("#search-meetUps").addEventListener("click", event => {  
 document.querySelector(".dom").addEventListener("click", event => {  // button event
     if(event.target.id.includes("meetups")){   //I am using a new function called .includes, it says target any id with the word meetups inside the id
         let idMeets = event.target.id.split("-")[1];  // splitting the targeted event in an array and asking only for index 1
-        let h3MeetUps = document.getElementById(idMeets);  // define a variable queryng for the new element (idMeets) 
+        let h4MeetUps = document.getElementById(idMeets);  // define a variable queryng for the new element (idMeets) 
         let meetUpsStorage = document.getElementById("meetups-Fav");  // this variable define where to store the new results 
-        meetUpsStorage.appendChild(h3MeetUps)  // appending the variable in the DOM
+        meetUpsStorage.appendChild(h4MeetUps)  // appending the variable in the DOM
     }
 
 })
