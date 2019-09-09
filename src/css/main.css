@@ -30,6 +30,21 @@ h2{
 #itinerary-list{
     background-color: white;
     font-size: 20px;
+    border: 2px black solid;
 }
 
+#itinerary-list p{
+    padding-left: 5px;
+}
 
+.restaurantListing{
+ font-size: 24px;
+ padding-bottom: 5px;
+}
+
+.restaurantListBox{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border: 1px gray solid;
+}
