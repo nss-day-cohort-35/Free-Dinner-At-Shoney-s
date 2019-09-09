@@ -32,6 +32,8 @@ document.querySelector(".dom").addEventListener("click", event => {  // button e
         let h4MeetUps = document.getElementById(idMeets);  // define a variable queryng for the new element (idMeets) 
         let meetUpsStorage = document.getElementById("meetups-Fav");  // this variable define where to store the new results 
         meetUpsStorage.appendChild(h4MeetUps)  // appending the variable in the DOM
+        
+        
     }
 
 })
