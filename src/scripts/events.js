@@ -30,10 +30,9 @@ document.querySelector(".dom").addEventListener("click", event => {  // button e
     if(event.target.id.includes("meetups")){   //I am using a new function called .includes, it says target any id with the word meetups inside the id
         let idMeets = event.target.id.split("-")[1];  // splitting the targeted event in an array and asking only for index 1
         let h4MeetUps = document.getElementById(idMeets);  // define a variable queryng for the new element (idMeets) 
-        let meetUpsStorage = document.getElementById("meetups-Fav");  // this variable define where to store the new results 
+        let meetUpsStorage = document.getElementById("meetups-Fav");  // this variable define where to store the new results
+        meetUpsStorage.innerHTML = "Meetups:"   
         meetUpsStorage.appendChild(h4MeetUps)  // appending the variable in the DOM
-        
-        
     }
 
 })
